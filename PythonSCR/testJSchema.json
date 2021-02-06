@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft-04/schema#",
+  "id": "http://delphiansystems.com/schemas/120.json#",
+  "title": "UpdateChildDeviceStatusRequest",
+  "description": "Message 120, sent by the bridge to update child device status",
+  "type": "object",
+  "properties": {
+    "Header": {
+      "properties": {
+        "Ver": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1
+        },
+        "Time": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "Ver",
+        "Time"
+      ]
+    },
+    "Devices": {
+      "type": "array",
+      "maxItems": 50,
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "Device": {
+            "description": "list of child devices",
+            "type": "array",
+            "maxItems": 50,
+            "items": {
+              "type": "object",
+              "properties": {
+                "AntSN": {
+                  "type": "string",
+                  "pattern": "^0x[0-9a-fA-F]{8}$"
+                },
+                "AntStatus": {
+                  "type": "integer"
+                },
+                "AntStatusTime": {
+                  "type": "integer"
+                },
+                "ParentAntSN": {
+                  "type": "string",
+                  "pattern": "^0x[0-9a-fA-F]{8}$"
+                },
+                "Status": {
+                  "type": "integer"
+                },
+                "rssiUpLink": {
+                  "type": "integer",
+                  "maximum": 0,
+                  "minimum": -80
+                }
+              },
+              "required": [
+                "AntSN",
+                "AntStatus",
+                "AntStatusTime",
+                "ParentAntSN",
+                "Status",
+                "rssiUpLink"
+              ]
+            }
+          }
+        },
+        "required": [
+          "Device"
+        ]
+      }
+    }
+  },
+  "required": [
+    "Header",
+    "Devices"
+  ]
+}

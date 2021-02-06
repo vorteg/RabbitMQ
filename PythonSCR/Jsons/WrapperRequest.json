@@ -1,0 +1,383 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "WrapperRequest",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "Ver": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "Time": {
+      "type": "integer"
+    },
+    "BridgeAntSN": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "MsgTyp": {
+      "$ref": "#/definitions/MessageType"
+    },
+    "Bridge": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/SRDevice"
+        }
+      ]
+    },
+    "RequestTopic": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "RequestJson": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  },
+  "definitions": {
+    "MessageType": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "None",
+        "MqttBrokerDetailsRequest",
+        "MqttBrokerDetailsResponse",
+        "DeviceListRequest",
+        "DeviceListResponse",
+        "DeviceOperationRequest",
+        "DeviceOperationResponse",
+        "DeviceStatusRequest",
+        "DeviceStatusResponse",
+        "AsyncEventRequest",
+        "AsyncEventResponse",
+        "AddDeviceRequest",
+        "AddDeviceResponse",
+        "RemoveDeviceRequest",
+        "RemoveDeviceResponse",
+        "DeviceReadWriteRequest",
+        "DeviceReadWriteResponse",
+        "DeviceResetRequest",
+        "DeviceResetResponse",
+        "UpdateChildDeviceStatusRequest",
+        "FirmwareVersionRequest",
+        "FirmwareVersionResponse",
+        "FirmwareDataRequest",
+        "FirmwareDataResponse",
+        "UpdateFirmwareInfomationRequest",
+        "UpdateFirmwareInfomationResponse",
+        "UpdateDeviceZoneRequest",
+        "UpdateDeviceZoneResponse",
+        "EpochTimeRequest",
+        "EpochTimeResponse",
+        "AutoAssignDeviceRequest",
+        "AutoAssignDeviceResponse",
+        "ChildDeviceInformationRequest",
+        "UpdateBridgeConnectTimesRequest",
+        "GetAccountDeviceTypesRequest",
+        "GetAccountDeviceTypesResponse",
+        "DeviceInstruction",
+        "ExceptionResponse",
+        "GetAccountInformationRequest",
+        "GetAccountInformationResponse",
+        "GetAccountACRInformationRequest",
+        "GetAccountACRInformationResponse",
+        "GetAccountUsersRequest",
+        "GetAccountUsersResponse",
+        "GetAccountUserGroupsRequest",
+        "GetAccountUserGroupsResponse",
+        "GetAccountSRDevicesRequest",
+        "GetAccountSRDevicesResponse",
+        "GetAccountSRDeviceGroupsRequest",
+        "GetAccountSRDeviceGroupsResponse",
+        "GetACRMasterRequest",
+        "GetACRMasterResponse",
+        "GetAccountUpdateInfoRequest",
+        "GetAccountUpdateInfoResponse",
+        "GetAccountUserUpdatesRequest",
+        "GetAccountUserUpdatesResponse",
+        "GetAccountUserGroupUpdatesRequest",
+        "GetAccountUserGroupUpdatesResponse",
+        "GetAccountSRDeviceUpdatesRequest",
+        "GetAccountSRDeviceUpdatesResponse",
+        "GetAccountSRDeviceGroupUpdatesRequest",
+        "GetAccountSRDeviceGroupUpdatesResponse",
+        "GetACRUpdateInfoRequest",
+        "GetACRUpdateInfoResponse",
+        "GetACRUpdateRequest",
+        "GetACRUpdateResponse",
+        "GetACRSchedulesRequest",
+        "GetACRSchedulesResponse",
+        "GetACRScheduleUpdateInfoRequest",
+        "GetACRScheduleUpdateInfoResponse",
+        "GetACRFICUpdateRequest",
+        "GetACRFICUpdateResponse",
+        "GetNewZoneKeyRequest",
+        "GetNewZoneKeyResponse",
+        "AccessControlUpdateRequest",
+        "AccessControlUpdateResponse",
+        "AccountResetRequest",
+        "AccountResetResponse",
+        "GetAccountsListRequest",
+        "GetAccountsListResponse",
+        "AddAccountRequest",
+        "AddAccountResponse",
+        "GetTimeZonesListRequest",
+        "GetTimeZonesListResponse",
+        "GetTimeZoneInfoRequest",
+        "GetTimeZoneInfoResponse",
+        "LastWillAndTestamentRequest",
+        "GetScheduleExceptionsListRequest",
+        "GetScheduleExceptionsListResponse",
+        "GetScheduleExceptionDetailRequest",
+        "GetScheduleExceptionDetailResponse",
+        "GetScheduleExceptionUpdatesRequest",
+        "GetScheduleExceptionUpdatesResponse",
+        "GetAutomationRulesListRequest",
+        "GetAutomationRulesListResponse",
+        "GetAutomationRuleDetailsRequest",
+        "GetAutomationRuleDetailsResponse",
+        "GetAutomationRuleUpdatesListRequest",
+        "GetAutomationRuleUpdatesListResponse",
+        "GetAutomationRuleUpdateDetailsRequest",
+        "GetAutomationRuleUpdateDetailsResponse",
+        "GetAutomationScheduleDetailsRequest",
+        "GetAutomationScheduleDetailsResponse",
+        "GetAutomationActionDetailsRequest",
+        "GetAutomationActionDetailsResponse",
+        "AutomationRuleUpdateRequest",
+        "AutomationRuleUpdateResponse",
+        "ExecuteAutomationRuleRequest",
+        "ExecuteAutomationRuleResponse",
+        "GetAutomationFICUpdateRequest",
+        "GetAutomationFICUpdateResponse"
+      ],
+      "enum": [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        138,
+        139,
+        161,
+        162,
+        198,
+        199,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        255,
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ]
+    },
+    "SRDevice": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "SRDeviceGuid": {
+          "type": "string",
+          "format": "guid"
+        },
+        "SerialNumber": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "SecurityToken": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ANTSerialNumber": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "byte"
+        },
+        "SRDeviceTypeId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "SecurityLevel": {
+          "type": "integer",
+          "format": "byte"
+        },
+        "CryptoKey1": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "byte"
+        },
+        "CryptoKey2": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "byte"
+        },
+        "CryptoKey3": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "byte"
+        },
+        "Created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "FactoryResetToken": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "byte"
+        },
+        "DeviceFirmwareInfo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "MfgDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "BuildNumber": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "int32"
+        },
+        "ConfiguredDeviceName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ModelNbr": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}
